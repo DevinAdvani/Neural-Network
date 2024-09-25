@@ -1,4 +1,6 @@
 import tkinter as tk
+import numpy as np
+np.set_printoptions(threshold = np.inf)
 
 def draw_line(event):
     global line_id
@@ -30,24 +32,19 @@ canvas.bind('<ButtonRelease-1>', end_line)
 root.mainloop()
 
 def print_matrix(input_matrix):
-    for i in range(0,len(input_matrix)):
+    for i in range(0,size):
         print(input_matrix[i])
 
 matrix = []
-row = []
 for i in range(0,size):
-    row.append(0)
-for j in range(0,size):
+    row = []
+    for j in range(0,size):
+        row.append(0)
     matrix.append(row)
-print(matrix)
 
-drawing = [[0,0],[1,1],[2,2]]
-
-#matrix = [[5,5,5,5,5],[5,5,5,5,5],[5,5,5,5,5],[5,5,5,5,5],[5,5,5,5,5]]
-
-for i in drawing:
+for i in range(0,len(drawing)):
     try:
-        matrix[i[0]][i[1]] = 1
+        matrix[drawing[i][1]][drawing[i][0]] = 1
     except:
         pass
 
