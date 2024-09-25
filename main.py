@@ -2,6 +2,10 @@ import tkinter as tk
 import numpy as np
 np.set_printoptions(threshold = np.inf)
 
+categorise_or_test = input("CATEGORISE OR TEST: ")
+if categorise_or_test == "cateogrise":
+    categorise_character = input("WHICH CHARACTER: ")
+
 def draw_line(event):
     global line_id
     line_points.extend((event.x, event.y))
@@ -33,6 +37,10 @@ root.mainloop()
 
 def print_matrix(input_matrix):
     for i in range(0,size):
+        for j in range(0,size):
+            if input_matrix[i][j] == 0:
+                input_matrix[i][j] = ' '
+    for i in range(0, size):
         print(input_matrix[i])
 
 matrix = []
@@ -48,4 +56,7 @@ for i in range(0,len(drawing)):
     except:
         pass
 
-print_matrix(matrix)
+if categorise_or_test == "cateogrise":
+    print("Thank you for the input")
+else:
+    print("")
