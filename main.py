@@ -39,8 +39,11 @@ for i in range(0,size):
     row.append(0)
 for j in range(0,size):
     matrix.append(row)
+print(matrix)
 
-print(drawing)
+drawing = [[0,0],[1,1],[2,2]]
+
+#matrix = [[5,5,5,5,5],[5,5,5,5,5],[5,5,5,5,5],[5,5,5,5,5],[5,5,5,5,5]]
 
 for i in drawing:
     try:
