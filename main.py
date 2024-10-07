@@ -43,7 +43,7 @@ while True:
     print("Type 'E' for exiting")
     choice = input(":")
     if choice == "A":
-        character = input("WHICH CHARACTER: ")
+        character = input("WHICH NUMBER: ")
     if choice == "E":
         break
 
