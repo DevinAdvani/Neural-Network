@@ -1,6 +1,5 @@
 import tkinter as tk
-import numpy as np
-np.set_printoptions(threshold = np.inf)
+from neural_network import function
 
 def print_matrix(input_matrix):
     for i in range(0,size):
@@ -40,6 +39,7 @@ while True:
     print("Type 'T' for testing")
     print("Type 'A' for adding to the dataset")
     print("Type 'I' for inspecting the dataset")
+    print("Type 'M' to make a neural network from the current dataset")
     print("Type 'E' for exiting")
     choice = input(":")
     if choice == "A":
@@ -73,6 +73,13 @@ while True:
                 matrix[drawing[i][1]][drawing[i][0]] = 1
             except:
                 pass
+
+    if choice == "T":
+        column_vector = []
+        for i in range(0,100):
+            for j in range(0,100):
+                column_vector.append(matrix[i][j])
+        print(function(column_vector))
     
     if choice == "I":
         f = open("data_set.txt", "r")
@@ -80,7 +87,7 @@ while True:
             print(x[2])
             for i in range(0,100):
                 print(x[7 + 100 * i: 107 + 100 * i])
-            
+
     
     if choice == "A":
         print("Thank you for the input")
